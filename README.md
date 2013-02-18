@@ -114,3 +114,9 @@ If your MidiListener machine is behind a firewell, you can connect them with an 
 ```
 ssh -f -g natlaugh@natlaughlin.com -L 20070:localhost:20070 -N
 ```
+
+or
+
+```
+autossh -M 20000 -f -g natlaugh@natlaughlin.com -L 20070:127.0.0.1:20070 -N
+```
