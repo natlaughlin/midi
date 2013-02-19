@@ -109,7 +109,7 @@ After playing your song, stop pressing anything for 10 seconds and both MIDI rec
 
 ### SSH Tunnel
 
-If your MidiListener machine is behind a firewell, you can connect them with an SSH tunnel.  
+If your MidiReceiver machine is behind a firewell, you can connect them with an SSH tunnel.  
 
 ```
 ssh -f -g natlaugh@natlaughlin.com -L 20070:localhost:20070 -N
