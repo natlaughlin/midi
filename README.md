@@ -112,11 +112,11 @@ After playing your song, stop pressing anything for 10 seconds and both MIDI rec
 If your MidiReceiver machine is behind a firewell, you can connect them with an SSH tunnel.  
 
 ```
-ssh -f -g natlaugh@natlaughlin.com -L 20070:localhost:20070 -N
+ssh -f -g username@host.com -L 20070:localhost:20070 -N
 ```
 
 or
 
 ```
-autossh -M 20000 -f -g natlaugh@natlaughlin.com -L 20070:127.0.0.1:20070 -N
+autossh -M 20000 -f -g username@host.com -L 20070:127.0.0.1:20070 -N
 ```
