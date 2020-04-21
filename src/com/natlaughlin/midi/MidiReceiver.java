@@ -1,32 +1,20 @@
 package com.natlaughlin.midi;
 
-import java.io.*;
-import java.net.*;
-import java.text.SimpleDateFormat;
-import java.util.Timer;
-import java.util.TimerTask;
-
-import javax.sound.midi.MetaMessage;
-import javax.sound.midi.MidiEvent;
-import javax.sound.midi.MidiMessage;
-import javax.sound.midi.MidiSystem;
-import javax.sound.midi.Sequence;
-import javax.sound.midi.ShortMessage;
-import javax.sound.midi.SysexMessage;
-import javax.sound.midi.Track;
-
-import org.apache.commons.cli.CommandLine;
-import org.apache.commons.cli.CommandLineParser;
-import org.apache.commons.cli.HelpFormatter;
-import org.apache.commons.cli.Option;
-import org.apache.commons.cli.OptionBuilder;
-import org.apache.commons.cli.Options;
-import org.apache.commons.cli.PosixParser;
+import org.apache.commons.cli.*;
 import org.apache.commons.io.FileUtils;
 import org.joda.time.DateTime;
 import org.joda.time.Seconds;
 
-import com.natlaughlin.midi.DumpReceiver;
+import javax.sound.midi.*;
+import java.io.File;
+import java.io.ObjectInputStream;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.text.SimpleDateFormat;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MidiReceiver extends Thread
 {
@@ -294,7 +282,10 @@ public class MidiReceiver extends Thread
 		if (MidiEventSerializable.SHORT == mt)
 		{
 			ShortMessage m = new ShortMessage();
-			m.setMessage(b[0], b[1], b[2]);
+			if(b.length == 3){
+				m.setMessage(b[0], b[1], b[2]);
+			}
+			//m.setMessage(b[0], b[1], b[2]);
 			msg = m;
 		} 
 		else if (MidiEventSerializable.SYSEX == mt)
