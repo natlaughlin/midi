@@ -1,4 +1,4 @@
-#MIDI
+# MIDI
 
 This project contains clients/servers for sending MIDI keyboard events over sockets.
 The receiver classes record MIDI data from these events and flushes the resulting MIDI file to disk after a specified time.
