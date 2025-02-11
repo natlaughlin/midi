@@ -8,7 +8,7 @@ The receiver classes record MIDI data from these events and flushes the resultin
 Get [Maven](http://maven.apache.org/), then execute
 
 ```java
-mvn assembly:assembly
+mvn clean package
 ```
 
 ## Examples
@@ -17,7 +17,7 @@ mvn assembly:assembly
 
 Plug your MIDI keyboard into the system (via USB for example), and find the list of devices:
 ```java
-java -cp target/midi-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.natlaughlin.midi.MidiSender -list
+java -cp ./target/midi-0.0.1-SNAPSHOT.jar com.natlaughlin.midi.MidiSender -list
 ```
 ```
 VMPK Output  VMPK Output  Unknown vendor	Unknown version
@@ -26,7 +26,7 @@ Real Time Sequencer	Software sequencer	Oracle Corporation	Version 1.0
 
 Start the MIDI receiver listening for events on port 20070:
 ```java
-java -cp target/midi-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.natlaughlin.midi.MidiReceiver -debug
+java -cp ./target/midi-0.0.1-SNAPSHOT.jar com.natlaughlin.midi.MidiReceiver -debug
 ```
 ```
 2013-02-16T13:50:29.106-08:00  MidiReceiver waiting for connection on socket 20070
@@ -34,7 +34,7 @@ java -cp target/midi-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.natlaughlin.mi
 
 Start the MIDISender with the MIDI device (VMPK Virtual Keyboard) to send MIDI data to port 20070:
 ```java
-java -cp target/midi-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.natlaughlin.midi.MidiSender -device VMPK -debug
+java -cp ./target/midi-0.0.1-SNAPSHOT.jar com.natlaughlin.midi.MidiSender -device VMPK -debug
 ```
 ```
 2013-02-16T13:50:52.932-08:00  Opening device matching: VMPK
@@ -65,7 +65,7 @@ To connect more than one Sender and Receiver to a single port (Multicast UDP), u
 
 Start the MIDI Multicast sender with the MIDI device (VMPK Virtual Keyboard) to send MIDI data to port 20070:
 ```java
-java -cp target/midi-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.natlaughlin.midi.MidiMulticastSender -device VMPK -debug
+java -cp ./target/midi-0.0.1-SNAPSHOT.jar com.natlaughlin.midi.MidiMulticastSender -device VMPK -debug
 ```
 ```
 2013-02-13T16:37:01.302-08:00  Opening device matching: VMPK
@@ -78,7 +78,7 @@ java -cp target/midi-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.natlaughlin.mi
 
 Start the MIDI Multicast receiver listening for events on port 20070:
 ```java
-java -cp target/midi-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.natlaughlin.midi.MidiMulticastReceiver -debug
+java -cp ./target/midi-0.0.1-SNAPSHOT.jarcom.natlaughlin.midi.MidiMulticastReceiver -debug
 ```
 ```
 2013-02-13T16:37:57.787-08:00  MidiMulticastReceiver joining Multicast group 225.0.0.50 20070
@@ -87,7 +87,7 @@ java -cp target/midi-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.natlaughlin.mi
 
 Start another MIDI Multicast receiver listening for events on port 20070:
 ```java
-java -cp target/midi-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.natlaughlin.midi.MidiMulticastReceiver -debug
+java -cp ./target/midi-0.0.1-SNAPSHOT.jar com.natlaughlin.midi.MidiMulticastReceiver -debug
 ```
 ```
 2013-02-13T16:37:57.787-08:00  MidiMulticastReceiver joining Multicast group 225.0.0.50 20070

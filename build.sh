@@ -1,2 +1,2 @@
 #!/bin/sh
-mvn assembly:assembly
+mvn clean package
