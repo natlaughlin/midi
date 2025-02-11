@@ -1,0 +1,6 @@
+target
+.git
+.idea
+.m2
+lib
+.DS_Store
